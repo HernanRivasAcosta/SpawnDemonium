@@ -1,0 +1,5 @@
+.DS_Store
+.env
+erl_crash.dump
+todo.txt
+spawndemonium*.tar.gz

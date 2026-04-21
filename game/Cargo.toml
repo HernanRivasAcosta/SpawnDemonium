@@ -1,0 +1,15 @@
+[package]
+name = "game"
+version = "0.1.0"
+edition = "2024"
+authors = ["Hernan Rivas Acosta <hernanrivasacosta@gmail.com>"]
+description = "Runs the spawndemonium game loop"
+
+[lib]
+crate-type = ["cdylib"]
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(debug_logging)'] }
+
+[dependencies]
+kaitai = { git = "https://github.com/kaitai-io/kaitai_struct_rust_runtime" }

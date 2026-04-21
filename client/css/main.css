@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100dvh;
+  overflow: hidden;
+}
+
+body {
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+  background: #000;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+#game-container {
+  position: relative;
+  flex: 0 0 auto;
+  /* Height drives sizing: capped at viewport height, or shorter when viewport is narrower than the game ratio.
+     Width is derived from height via aspect-ratio, naturally centering between the side panels. */
+  height: min(100dvh, calc(100vw * var(--canvas-h) / var(--canvas-w)));
+  aspect-ratio: var(--canvas-w) / var(--canvas-h);
+}
+
+#canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+}
+
+#side-left,
+#side-right {
+  position: relative;
+  flex: 1;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+#side-left img,
+#side-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#side-left::after,
+#side-right::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+#side-left::after {
+  background: linear-gradient(to left, rgba(0,0,0,0.95), rgba(0,0,0,0.5));
+}
+
+#side-right::after {
+  background: linear-gradient(to right, rgba(0,0,0,0.95), rgba(0,0,0,0.5));
+}

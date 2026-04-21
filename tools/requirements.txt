@@ -1,0 +1,7 @@
+click
+kaitaistruct
+Pillow
+PyTexturePacker
+black
+isort
+ruff

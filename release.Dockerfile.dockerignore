@@ -1,0 +1,17 @@
+.git
+.env
+.claude
+docs
+todo.txt
+**/.DS_Store
+**/__pycache__
+*.tar.gz
+assets/_build
+assets/_temp
+client/node_modules
+game/target
+maps/_build
+server/_build
+server/deps
+tools/.venv
+tools/.ruff_cache
